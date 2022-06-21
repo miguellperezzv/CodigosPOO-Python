@@ -11,14 +11,17 @@ import tkinter as tk
 if __name__ == "__main__":
     contador = ContadorHexadecimal()
     limite=4099;   
+    """
     for i in range(limite):
         contador.contar()
         #print(contador.mostrarConteo())
-
+    """
+    
     root = tk.Tk()
     app = FrameContador(root)
     root.mainloop()
     
         
+
 
  
