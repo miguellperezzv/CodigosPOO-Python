@@ -6,6 +6,9 @@ from gui.FrameContador import FrameContador
 import tkinter as tk
 
 
+root = tk.Tk()
+app = FrameContador(root)
+
 
 
 if __name__ == "__main__":
@@ -17,10 +20,12 @@ if __name__ == "__main__":
         #print(contador.mostrarConteo())
     """
     
-    root = tk.Tk()
-    app = FrameContador(root)
+    
+    #root.protocol("WM_DELETE_WINDOW", app.timer.cancel())
     root.mainloop()
     
+
+
         
 
 
