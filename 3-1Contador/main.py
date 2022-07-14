@@ -14,11 +14,12 @@ app = FrameContador(root)
 if __name__ == "__main__":
     contador = ContadorHexadecimal()
     limite=4099;   
-    """
+    
+    '''
     for i in range(limite):
         contador.contar()
-        #print(contador.mostrarConteo())
-    """
+        print(contador.mostrarConteo())
+    '''
     
     
     #root.protocol("WM_DELETE_WINDOW", app.timer.cancel())
