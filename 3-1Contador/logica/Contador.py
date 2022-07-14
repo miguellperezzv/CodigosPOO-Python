@@ -9,9 +9,10 @@ class Contador(ABC):
     
 
     #Constructor
-    def __init__(self):
-        self.valor = 0
+    def __init__(self, valor):
+        self.valor = valor
         self.tope = 4098
+
 
     def contar(self):
         if (self.valor  < self.tope) :

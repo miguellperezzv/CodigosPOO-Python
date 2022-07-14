@@ -12,7 +12,7 @@ app = FrameContador(root)
 
 
 if __name__ == "__main__":
-    contador = ContadorHexadecimal()
+    #contador = ContadorHexadecimal()
     limite=4099;   
     
     '''
