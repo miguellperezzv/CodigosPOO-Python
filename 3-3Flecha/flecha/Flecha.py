@@ -13,12 +13,13 @@ class Flecha:
         return self.coordenadaY
     
     def setCoordX(self,coord):
-        self.coordenadaX = coord
+        self.coordenadaX = (int) (coord)
     
     def setCoordY(self,coord):
-        self.coordenadaY = coord
+        self.coordenadaY = int (coord)
 
     def getImagen(self):
+        #print("RUTA "+ self.imagen)
         return self.imagen
 
     def setImagen(self, string):
