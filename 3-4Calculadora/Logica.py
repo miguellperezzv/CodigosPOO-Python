@@ -95,14 +95,58 @@ class Binario(Sistema):
     def __init__(self):
         self.__base = 2
 
+class Decimal(Sistema):
+    def __init__(self):
+        self.__base = 10
+
+class Octal(Sistema):
+    def __init__(self):
+        self.__base = 8
+
+class Hexadecimal(Sistema):
+    def __init__(self):
+        self.__base = 16
+
 
 class Conversion():
     
-    def fromHexadecimal(cad):
+    def fromHexadecimal(self,cad):
         return int(cad, 16)
 
-
-    def fromOctal(cad):
+    def fromOctal(self,cad):
         return int(cad, 8)
 
+    def fromBinario(self, cad):
+        return int(cad, 2)
+
+    def toHexadecimal(self, n):
+        return str(format(n, "x"))
+
+    def toOctal(self, n):
+        return str(format(n, "o"))
+
+    def toBinario(self, n):
+        return str(format(n, "b"))
+
+    def convertirSistema(self,actual, nuevo, cad):
+        res = ""
+        num = 0
+        if len(cad) > 0:
+            if actual == 2:
+                num = self.fromBinario(cad)
+            elif actual == 8:
+                num = self.fromOctal(cad)
+            elif actual == 10:
+                num = int(cad)
+            elif actual == 16:
+                num = self.fromHexadecimal(cad)
+        if nuevo == 2:
+            res = self.toBinario(num)
+        elif nuevo == 8 : 
+            res = self.toOctal(num)
+        elif nuevo == 10:
+            res = str(num)
+        elif nuevo == 16:
+            res  = self.toHexadecimal(num)
+        return res
     
