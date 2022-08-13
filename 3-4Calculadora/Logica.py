@@ -2,13 +2,14 @@ from abc import ABC, abstractmethod   ##Clase abstracta
 
 class Sistema(ABC):
 
-    __base = 0
+    
 
     def __init__(self):
         self._numeroA = 0
         self._numeroB = 0
         self._resultado = 0
         self._operacion= ' '
+        self._base=0
 
 
     def set_numeroA (self, n):
@@ -36,16 +37,16 @@ class Sistema(ABC):
         return self._operacion
 
     def suma(self):
-        return self._numeroA + self._numeroB
+        self._resultado = self._numeroA + self._numeroB
 
     def resta(self):
-        return self._numeroA - self._numeroB
+        self._resultado =  self._numeroA - self._numeroB
 
     def multiplicacion(self):
-        return self._numeroA * self._numeroB
+        self._resultado =  self._numeroA * self._numeroB
 
     def division(self):
-        return self._numeroA / self._numeroB
+        self._resultado =  self._numeroA / self._numeroB
 
     def establecerNumeroA(self, a):
         n = int(a, self._base)
@@ -53,59 +54,59 @@ class Sistema(ABC):
 
     def establecerNumeroB(self, b):
         n = int(b, self._base)
-        self.set_numeroA(n)
+        self.set_numeroB(n)
 
     def retornarNumeroA(self):
         cad  =""
-        if self.__base == 2:
+        if self._base == 2:
             cad = str(format(self._numeroA, "b"))
-        elif self.__base == 8:
+        elif self._base == 8:
             cad = str(format(self._numeroA, "o"))
-        elif self.__base == 10:
+        elif self._base == 10:
             cad = str(format(self._numeroA, "d"))
-        elif self.__base == 16:
+        elif self._base == 16:
             cad = str(format(self._numeroA, "x"))
         return cad
 
     def retornarNumeroB(self):
         cad  =""
-        if self.__base == 2:
+        if self._base == 2:
             cad = str(format(self._numeroB, "b"))
-        elif self.__base == 8:
+        elif self._base == 8:
             cad = str(format(self._numeroB, "o"))
-        elif self.__base == 10:
+        elif self._base == 10:
             cad = str(format(self._numeroB, "d"))
-        elif self.__base == 16:
+        elif self._base == 16:
             cad = str(format(self._numeroB, "x"))
         return cad
 
     def retornarResultado(self):
         cad  =""
-        if self.__base == 2:
+        if self._base == 2:
             cad = str(format(self._resultado, "b"))
-        elif self.__base == 8:
+        elif self._base == 8:
             cad = str(format(self._resultado, "o"))
-        elif self.__base == 10:
+        elif self._base == 10:
             cad = str(format(self._resultado, "d"))
-        elif self.__base == 16:
+        elif self._base == 16:
             cad = str(format(self._resultado, "x"))
         return cad
 
 class Binario(Sistema):
     def __init__(self):
-        self.__base = 2
+        self._base = 2
 
 class Decimal(Sistema):
     def __init__(self):
-        self.__base = 10
+        self._base = 10
 
 class Octal(Sistema):
     def __init__(self):
-        self.__base = 8
+        self._base = 8
 
 class Hexadecimal(Sistema):
     def __init__(self):
-        self.__base = 16
+        self._base = 16
 
 
 class Conversion():
